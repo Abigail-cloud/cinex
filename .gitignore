@@ -1,6 +1,7 @@
 #Complied Output
 /build
 /node_modules
+/data
 
 
 # env variables

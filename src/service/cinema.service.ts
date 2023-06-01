@@ -1,4 +1,4 @@
-import { Mutex, Semaphore } from "async-mutex";
+import { Mutex, Semaphore } from "async-mutex"; // Imprted Semaphore from async-mutex
 import dotenv from 'dotenv';
 
 import Main from "../utilityClass/main";
@@ -11,13 +11,13 @@ dotenv.config();
 
 export class CinemaService {
   private MAX_CAPACITY: number;
-  private semaphore:Semaphore;
+  private semaphore:Semaphore; // Semaphore decalred as private variable
   private utility = new Main();
   private cinemaRepository = new CinemaRepository();
 
   constructor(maxCapacity: number) {
     this.MAX_CAPACITY = maxCapacity;
-    this.semaphore = new Semaphore(maxCapacity);
+    this.semaphore = new Semaphore(maxCapacity); // Initializes Semaphore variable by creating a new instance from Semaphore class
   }
 
   public async bookTickets(ticketPayload: Booking): Promise<{ booking: TicketBooking, bookingId: string }> {
@@ -35,6 +35,7 @@ export class CinemaService {
 
     const showtime = this.calculateShowtime(ticketPayload);
     const booking = await this.createBooking(ticketPayload, bookingId, availableSeats, showtime);
+    // releases a permit from semapore which enable other processes to proceed with the task
     this.semaphore.release();
 
     return {booking, bookingId};

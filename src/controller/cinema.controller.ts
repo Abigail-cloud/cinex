@@ -5,7 +5,7 @@ import { StatusCodes } from 'http-status-codes';
 import log from '../utilityClass/logger';
 
 export class CinemaController{
-    private cinemaService = new CinemaService(4);
+    private cinemaService = new CinemaService(4); // configurable maximum capacity parameter
 
     public async bookTickets(req: Request, res: Response): Promise<void> {
       const TicketBooking : Booking = {

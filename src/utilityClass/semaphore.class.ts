@@ -1,4 +1,4 @@
-// Create a semaphore with the given count
+// Created a semaphore with the given count..
 export class Semaphore {
     private count: number;
     private waiting: Array<() => void>;
