@@ -1,13 +1,12 @@
 import express from "express";
-import bodyParser from "body-parser";
 import dotenv from "dotenv";
-import connectDB from "./src/configDb/connect";
+import connectDB from "./src/db/connect";
 import cinemaRouter from "./src/routes/cinema.routes";
 
 dotenv.config()
 
 const app = express();
-app.use(bodyParser.json());
+app.use(express.json());
 const port = process.env.PORT;
 
 
