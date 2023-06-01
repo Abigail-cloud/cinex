@@ -14,3 +14,9 @@ screen: ScreenOptions;
   movieTitle: string;
   hallNumber: number;
 }
+
+
+interface Screen{
+  Screen1 : string
+  Screen2 : string
+}

@@ -71,7 +71,7 @@ export class CinemaService {
       seats: ticketPayload.requestedSeats,
       hallNumber: hallNumberOptions,
       price: priceOptions ,
-      screen: ticketPayload.screenName,
+      screen: ticketPayload.screenName as ScreenOptions,
       showtime,
       movieTitle:  movieTitleOptions,
       bookingId: bookingId,

@@ -1,9 +1,10 @@
 import mongoose, { Schema } from "mongoose";
 import {  TicketBooking } from "../Interface/cinema.interface";
+import { ScreenOptions } from "../utilityClass/enums.options";
 
 
 const BookingSchema = new Schema<TicketBooking>({
-    screen: { type: String, required: true },
+    screen:  String,
     seats: { type: Number, required: true },
     showtime: { type: String, required: true },
     price: { type: Number, required: true },
@@ -13,5 +14,4 @@ const BookingSchema = new Schema<TicketBooking>({
     bookingId: {type: String}
   });
 
-//  { enum: ["available", "booked"], default: "available"}
 export const BookedTickets= mongoose.model<TicketBooking>('BookTicket', BookingSchema)
