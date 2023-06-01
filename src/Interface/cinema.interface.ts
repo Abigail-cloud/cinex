@@ -1,9 +1,6 @@
 
 import { ScreenOptions } from "../utilityClass/enums.options";
 
-
-
-
 export interface TicketBooking  {
 screen: ScreenOptions;
   seats: number;
