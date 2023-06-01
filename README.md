@@ -2,6 +2,8 @@
 # Cinema Booking System Documentation
 
 This documentation provides an overview of the Cinex Ticket Cinema Booking System code implementation. It includes information about the code structure, the functionality of different components, and an explanation of how semaphores are used in the system.
+It is a simplified ticket booking system for a cinema.The cinema has a limited number of seats available, and multiple customers can try to book
+tickets concurrently
 
 ## Code Structure
 
@@ -62,7 +64,9 @@ The `CinemaController` class handles the HTTP requests and responses related to 
 The `cinema.routes.ts` file using the Express Router. The `/book` route is associated with the bookTickets method of the CinemaController class. When a POST request is made to this route, it invokes the bookTickets method and handles the response accordingly.
 
 
-The `Semaphore` class or package is a synchronization primitive that allows controlling access to a shared resource by multiple threads or processes. It maintains a count of available resources and provides methods to acquire and release these resources.
+## Semaphore class || Aync-Mutex Library
+
+ Semaphore class or package is a synchronization primitive that allows controlling access to a shared resource by multiple threads or processes. It maintains a count of available resources and provides methods to acquire and release these resources.
 The Semaphore class has the following properties and methods:
 The `async-mutex `uses the semaphore class:
 count: Represents the count of available resources in the semaphore.
